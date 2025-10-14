@@ -1,4 +1,3 @@
-
 import styles from "../module.css/Footer.module.css"
 
 type FooterProps = {
@@ -25,7 +24,7 @@ export default function Footer({
             <span className={styles.appName}>{appName}</span>
           </div>
           <p className={styles.blurb}>
-            Your ultimate shopping companion! Effortlessly organize your groceries,
+            A modern developer portfolio showcasing projects, skills, and ways to get in touch.
           </p>
 
           <div className={styles.socials} aria-label="Social links">
@@ -41,7 +40,7 @@ export default function Footer({
                 />
               </svg>
             </a>
-            <a className={styles.socialLink} href="#" aria-label="LinkedIn">
+            <a className={styles.socialLink} href="https://www.linkedin.com/in/sabelogumede/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg
                 viewBox="0 0 24 24"
                 className={styles.socialIcon}
@@ -68,14 +67,12 @@ export default function Footer({
           </div>
         </div>
 
-     
-
         {/* Contact */}
         <div className={styles.col}>
           <h3 className={styles.colTitle}>Contact</h3>
           <ul className={styles.list}>
             <li>
-              <a className={styles.link} href="mailto:info@example.com">
+              <a className={styles.link} href="mailto:Sabelohgumede@gmail.com">
                 Sabelohgumede@gmail.com
               </a>
             </li>
@@ -93,7 +90,7 @@ export default function Footer({
 
       <div className={styles.base}>
         <span className={styles.copy}>
-          © {year} {appName}. All rights reserved.
+          {year} {appName}. All rights reserved.
         </span>
         <nav className={styles.legal}>
           <a href="#" className={styles.link}>

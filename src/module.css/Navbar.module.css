@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: #0d1d45;           /* slate-900 */
+  background: linear-gradient(135deg, #0d1d45, #1e3a8a);
   color: #e5e7eb;                 /* gray-200 */
   width: 100%;
-  padding: 2px;
-  margin: 2px;
-  height: 80px;
+  padding: 8px 12px;
+  margin: 0;
+  height: 72px;
 }
 
 .brand {
@@ -21,7 +21,7 @@
   text-decoration: none;
   color: #f1f2f3;
   font-size: xx-large;
-  margin-left: 50px;
+  margin-left: 0;
 }
 
 .logo {
@@ -29,7 +29,6 @@
   height: 28px;
  color: white;
 }
-
 
 .appName {
   font-size: 1.125rem;
@@ -41,10 +40,9 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: transparent;
   color: #e5e7eb;
-  
 }
 
 .link,
@@ -70,6 +68,51 @@
   color: #111827;
   background: #eef2ff;          /* subtle active bg */
   outline: 2px solid #c7d2fe;    /* focus ring style */
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 8px;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #dbeafe;
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 140ms ease, transform 80ms ease;
+}
+
+.iconButton:hover {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-1px);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 140ms ease, transform 80ms ease;
+}
+
+.cta:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 560px) {

@@ -1,0 +1,51 @@
+.main {
+  min-height: 650px;
+  padding: 32px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.lead {
+  margin: 0 0 24px 0;
+  color: #475569;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.cardTitle {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.skillChip {
+  border: 1px solid #e5e7eb;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f8fafc;
+}
