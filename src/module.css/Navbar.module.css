@@ -1,0 +1,87 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #0d1d45;           /* slate-900 */
+  color: #e5e7eb;                 /* gray-200 */
+  width: 100%;
+  padding: 2px;
+  margin: 2px;
+  height: 80px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #f1f2f3;
+  font-size: xx-large;
+  margin-left: 50px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+ color: white;
+}
+
+
+.appName {
+  font-size: 1.125rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  padding: 5px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: #e5e7eb;
+  
+}
+
+.link,
+.linkActive {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #bcc2cd;
+  transition: background 140ms ease, color 140ms ease, transform 70ms ease;
+}
+
+.link:hover {
+  background: #f3f4f6;
+}
+
+.linkActive {
+  color: #111827;
+  background: #eef2ff;          /* subtle active bg */
+  outline: 2px solid #c7d2fe;    /* focus ring style */
+}
+
+@media (max-width: 560px) {
+  .appName {
+    font-size: 1rem;
+  }
+  .links {
+    gap: 6px;
+  }
+  .link, .linkActive {
+    padding: 0 10px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}
