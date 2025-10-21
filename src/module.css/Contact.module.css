@@ -1,0 +1,120 @@
+.hero {
+  min-height: 650px;
+  padding: 48px 16px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroCard {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #e6fffb;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.buttonPrimary {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f766e;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 6px rgba(2, 6, 23, 0.15);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.2);
+}
+
+.buttonGhost {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.buttonGhost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .panelGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(2,6,23,0.06);
+}
+
+.panelTitle {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+}
+
+.linkRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.linkButton {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #1f6feb;
+  background: #f0f6ff;
+  color: #1f6feb;
+  text-decoration: none;
+}
+
+.muted {
+  color: #475569;
+}

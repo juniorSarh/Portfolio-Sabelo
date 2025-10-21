@@ -6,6 +6,13 @@ export default function About() {
   return (
     <div>
       <Navbar/>
+              <section className={styles.hero}>
+                <div className={styles.heroCard}>
+                  <h1 className={styles.heroTitle}>Full-Stack Developer</h1>
+                  <p className={styles.heroSubtitle}>I build clean, accessible web apps with React, TypeScript, Node.js, and .NET — always focusing on performance and great UX.</p>
+                </div>
+              </section>
+
               <main className={styles.main}>
                 <h1 className={styles.heading}>Full-Stack Developer</h1>
                 <p className={styles.lead}>
