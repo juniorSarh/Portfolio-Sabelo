@@ -20,21 +20,23 @@ export default function Projects() {
       title: "Job Application Tracker",
       description:
         "Job application tracker built with React + Vite, featuring responsive layout and clean routing.",
-      link: "https://your-ecommerce-live-link.example.com",
+      link: "https://job-app-tracker-qzko.onrender.com",
       imageSrc: JobTracker,
       imageAlt: "job application tracker",
     },
     {
       title: "React Weather App",
-      description: "Weather app built with React + Vite, featuring responsive layout and clean routing.",
+      description:
+        "Weather app built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-dashboard-live-link.example.com",
       imageSrc: weatherApp,
       imageAlt: "weather application imimage",
     },
     {
       title: "Shopping List API",
-      description: "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
-      link: "https://your-dashboard-live-link.example.com",
+      description:
+        "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
+      link: "https://shopping-list-app-pfno.onrender.com",
       imageSrc: shoppingList,
       imageAlt: "Dashboard analytics preview",
     },

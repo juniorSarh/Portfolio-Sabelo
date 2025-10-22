@@ -24,7 +24,7 @@ export default function Footer({
             <span className={styles.appName}>{appName}</span>
           </div>
           <p className={styles.blurb}>
-            A modern developer portfolio showcasing projects, skills, and ways
+            A Full-Stack developer portfolio showcasing projects, skills, and ways
             to get in touch.
           </p>
 

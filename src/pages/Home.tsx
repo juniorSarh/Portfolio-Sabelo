@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import styles from '../module.css/Home.module.css'
 import codingImg from '../assets/sabelo.png'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -25,20 +26,18 @@ export default function Home() {
           <br />
           <br />
           <div className={styles.actions}>
-            <a
-              href="/projects"
+            <Link to="/projects"
               className={styles.buttonPrimary}
               aria-label="View my projects"
             >
               View Projects
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link to="/contact"
               className={styles.buttonGhost}
               aria-label="Get in touch"
             >
               Get in touch
-            </a>
+            </Link>
           </div>
         </section>
 
