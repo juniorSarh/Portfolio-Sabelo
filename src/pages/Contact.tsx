@@ -20,7 +20,7 @@ export default function Contact() {
           <article className={styles.panel}>
             <h2 className={styles.panelTitle}>Quick Links</h2>
             <div className={styles.linkRow}>
-              <a href="/Sabelo_Gumede_CV.pdf" download className={styles.linkButton} aria-label="Download my CV as PDF">Download CV</a>
+              <a href="/src/assets/Sabelo-Gumede-Full-Stack-Developer.pdf" download className={styles.linkButton} aria-label="Download my CV as PDF">Download CV</a>
               <a href="/projects" className={styles.linkButton} aria-label="Browse my projects">See Projects</a>
             </div>
           </article>
