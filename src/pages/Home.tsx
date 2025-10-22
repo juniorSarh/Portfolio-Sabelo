@@ -4,8 +4,38 @@ import Footer from '../components/Footer'
 import styles from '../module.css/Home.module.css'
 import codingImg from '../assets/sabelo.png'
 import { Link } from 'react-router-dom';
+import projectStyles from '../module.css/Projects.module.css'
+import JobTracker from "../assets/job-tracker.webp";
+import linkVault from "../assets/Link-vault.png";
+import shoppingList from "../assets/shoppinglist.png";
 
 export default function Home() {
+  const projects = [
+    {
+      title: "Link Vault",
+      description:
+        "Link vault built with React + Vite, featuring responsive layout and clean routing.",
+      link: "https://your-portfolio-live-link.example.com",
+      imageSrc: linkVault,
+      imageAlt: "Screenshot preview of the portfolio website",
+    },
+    {
+      title: "Job Application Tracker",
+      description:
+        "Job application tracker built with React + Vite, featuring responsive layout and clean routing.",
+      link: "https://job-app-tracker-qzko.onrender.com",
+      imageSrc: JobTracker,
+      imageAlt: "job application tracker",
+    },
+    {
+      title: "Shopping List API",
+      description:
+        "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
+      link: "https://shopping-list-app-pfno.onrender.com",
+      imageSrc: shoppingList,
+      imageAlt: "Dashboard analytics preview",
+    },
+  ];
   return (
     <div>
       <Navbar />
@@ -58,41 +88,30 @@ export default function Home() {
       </div> */}
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>Featured Projects</h2>
-        <div className={styles.miniGrid}>
-          <article className={styles.miniCard}>
-            <h3 className={styles.miniTitle}>Portfolio Website</h3>
-            <p>A fast, responsive portfolio built with React + Vite.</p>
-            <a
-              href="/projects"
-              className={styles.miniLink}
-              aria-label="See projects"
-            >
-              See more →
-            </a>
-          </article>
-          <article className={styles.miniCard}>
-            <h3 className={styles.miniTitle}>E-commerce Demo</h3>
-            <p>Mock storefront with cart and checkout flows.</p>
-            <a
-              href="/projects"
-              className={styles.miniLink}
-              aria-label="See projects"
-            >
-              See more →
-            </a>
-          </article>
-          <article className={styles.miniCard}>
-            <h3 className={styles.miniTitle}>Analytics Dashboard</h3>
-            <p>Data visualizations with filters and insights.</p>
-            <a
-              href="/projects"
-              className={styles.miniLink}
-              aria-label="See projects"
-            >
-              See more →
-            </a>
-          </article>
-        </div>
+        <section className={projectStyles.grid}>
+          {projects.map((p) => (
+            <article key={p.title} className={projectStyles.card}>
+              <div className={projectStyles.thumbWrap}>
+                <img src={p.imageSrc} alt={p.imageAlt} className={projectStyles.thumb} />
+              </div>
+              <div className={projectStyles.body}>
+                <h2 className={projectStyles.title}>{p.title}</h2>
+                <p className={projectStyles.desc}>{p.description}</p>
+              </div>
+              <div className={projectStyles.actions}>
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${p.title}`}
+                  className={projectStyles.button}
+                >
+                  View Project
+                </a>
+              </div>
+            </article>
+          ))}
+        </section>
       </section>
 
       <section className={styles.section}>
