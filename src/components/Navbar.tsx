@@ -38,7 +38,7 @@ export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
             isActive ? styles.linkActive : styles.link
           }
         >
-          About Me
+          About
         </NavLink>
         <NavLink
           to="/contact"

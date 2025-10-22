@@ -25,15 +25,15 @@ export default function Projects() {
       imageAlt: "job application tracker",
     },
     {
-      title: "React Weather App",
+      title: "The Weather App",
       description:
         "Weather app built with React + Vite, featuring responsive layout and clean routing.",
-      link: "https://your-dashboard-live-link.example.com",
+      link: "https://weather-application-5r2t.onrender.com",
       imageSrc: weatherApp,
       imageAlt: "weather application imimage",
     },
     {
-      title: "Shopping List API",
+      title: "Shopping List APP",
       description:
         "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://shopping-list-app-pfno.onrender.com",
