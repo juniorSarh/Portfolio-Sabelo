@@ -24,7 +24,8 @@ export default function Footer({
             <span className={styles.appName}>{appName}</span>
           </div>
           <p className={styles.blurb}>
-            A modern developer portfolio showcasing projects, skills, and ways to get in touch.
+            A modern developer portfolio showcasing projects, skills, and ways
+            to get in touch.
           </p>
 
           <div className={styles.socials} aria-label="Social links">
@@ -40,7 +41,13 @@ export default function Footer({
                 />
               </svg>
             </a>
-            <a className={styles.socialLink} href="https://www.linkedin.com/in/sabelogumede/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              className={styles.socialLink}
+              href="https://www.linkedin.com/in/sabelogumede/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <svg
                 viewBox="0 0 24 24"
                 className={styles.socialIcon}
@@ -52,7 +59,11 @@ export default function Footer({
                 />
               </svg>
             </a>
-            <a className={styles.socialLink} href="#" aria-label="GitHub">
+            <a
+              className={styles.socialLink}
+              href="https://github.com/juniorSarh"
+              aria-label="GitHub"
+            >
               <svg
                 viewBox="0 0 24 24"
                 className={styles.socialIcon}

@@ -7,22 +7,31 @@ import reactLogo from "../assets/react.svg"
 export default function Projects() {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "Personal site built with React + Vite, featuring responsive layout and clean routing.",
+      title: "Link Vault",
+      description:
+        "Link vault built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-portfolio-live-link.example.com",
       imageSrc: codingImg,
       imageAlt: "Screenshot preview of the portfolio website",
     },
     {
-      title: "E-commerce Demo",
-      description: "Mock storefront with product list, cart, and checkout flow.",
+      title: "Job Application Tracker",
+      description:
+        "Job application tracker built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-ecommerce-live-link.example.com",
       imageSrc: reactLogo,
       imageAlt: "E-commerce demo logo",
     },
     {
-      title: "Dashboard App",
-      description: "Analytics dashboard with charts and filters.",
+      title: "React Weather App",
+      description: "Weather app built with React + Vite, featuring responsive layout and clean routing.",
+      link: "https://your-dashboard-live-link.example.com",
+      imageSrc: codingImg,
+      imageAlt: "Dashboard analytics preview",
+    },
+    {
+      title: "Shopping List API",
+      description: "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-dashboard-live-link.example.com",
       imageSrc: codingImg,
       imageAlt: "Dashboard analytics preview",

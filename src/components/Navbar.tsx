@@ -6,7 +6,7 @@ type NavbarProps = {
   appName?: string;
 };
 
-export default function Navbar({ appName = "Sabelo Gumede Portfolio" }: NavbarProps) {
+export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
   return (
     <header className={styles.navbar}>
       <NavLink to="/" className={styles.brand} aria-label={`${appName} home`}>
