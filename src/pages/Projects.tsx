@@ -1,8 +1,10 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import styles from "../module.css/Projects.module.css"
-import codingImg from "../assets/coding.png"
-import reactLogo from "../assets/react.svg"
+import JobTracker from "../assets/job-tracker.webp";
+import weatherApp from "../assets/weather-app.webp";
+import linkVault from "../assets/Link-vault.png";
+import shoppingList from "../assets/shoppinglist.png";
 
 export default function Projects() {
   const projects = [
@@ -11,7 +13,7 @@ export default function Projects() {
       description:
         "Link vault built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-portfolio-live-link.example.com",
-      imageSrc: codingImg,
+      imageSrc: linkVault,
       imageAlt: "Screenshot preview of the portfolio website",
     },
     {
@@ -19,21 +21,21 @@ export default function Projects() {
       description:
         "Job application tracker built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-ecommerce-live-link.example.com",
-      imageSrc: reactLogo,
-      imageAlt: "E-commerce demo logo",
+      imageSrc: JobTracker,
+      imageAlt: "job application tracker",
     },
     {
       title: "React Weather App",
       description: "Weather app built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-dashboard-live-link.example.com",
-      imageSrc: codingImg,
-      imageAlt: "Dashboard analytics preview",
+      imageSrc: weatherApp,
+      imageAlt: "weather application imimage",
     },
     {
       title: "Shopping List API",
       description: "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
       link: "https://your-dashboard-live-link.example.com",
-      imageSrc: codingImg,
+      imageSrc: shoppingList,
       imageAlt: "Dashboard analytics preview",
     },
   ];
