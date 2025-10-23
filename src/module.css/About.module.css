@@ -5,12 +5,28 @@
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .main { padding: 28px 14px; }
+}
+
+@media (max-width: 560px) {
+  .main { padding: 24px 12px; }
+}
+
 .hero {
   padding: 48px 16px 0 16px;
   position: relative;
   overflow: hidden;
   background: radial-gradient(1000px 500px at -10% -10%, rgba(99,102,241,0.12), transparent 60%),
     radial-gradient(800px 500px at 110% 110%, rgba(14,165,233,0.12), transparent 60%);
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 36px 14px 0 14px; }
+}
+
+@media (max-width: 560px) {
+  .hero { padding: 28px 12px 0 12px; }
 }
 
 .heroCard {
@@ -34,12 +50,24 @@
   transform: translateY(8px);
 }
 
+@media (max-width: 768px) {
+  .heroTitle { font-size: 30px; }
+}
+
+@media (max-width: 480px) {
+  .heroTitle { font-size: 26px; }
+}
+
 .heroSubtitle {
   margin: 0;
   font-size: 18px;
   color: #eef2ff;
   opacity: 0;
   transform: translateY(8px);
+}
+
+@media (max-width: 768px) {
+  .heroSubtitle { font-size: 16px; }
 }
 
 .heading {
@@ -64,6 +92,10 @@
   }
 }
 
+@media (max-width: 560px) {
+  .sectionGrid { gap: 12px; }
+}
+
 .card {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 12px;
@@ -73,6 +105,10 @@
   opacity: 0;
   transform: translateY(12px);
   transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+@media (max-width: 560px) {
+  .card { padding: 14px; }
 }
 
 .cardTitle {

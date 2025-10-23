@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import styles from "../module.css/Navbar.module.css"
 
 
@@ -7,6 +8,9 @@ type NavbarProps = {
 };
 
 export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((v) => !v);
+  const close = () => setOpen(false);
   return (
     <header className={styles.navbar}>
       <NavLink to="/" className={styles.brand} aria-label={`${appName} home`}>
@@ -15,12 +19,26 @@ export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
         <span className={styles.appName}>{appName}</span>
       </NavLink>
 
-      <nav className={styles.links}>
+      <button
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded={open}
+        className={styles.menuButton}
+        onClick={toggle}
+      >
+        <span className={styles.menuBar} />
+        <span className={styles.menuBar} />
+        <span className={styles.menuBar} />
+      </button>
+
+      <nav id="primary-navigation" className={`${styles.links} ${open ? styles.open : ""}`}>
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive ? styles.linkActive : styles.link
           }
+          onClick={close}
         >
           Home
         </NavLink>
@@ -29,6 +47,7 @@ export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
           className={({ isActive }) =>
             isActive ? styles.linkActive : styles.link
           }
+          onClick={close}
         >
           Projects
         </NavLink>
@@ -37,6 +56,7 @@ export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
           className={({ isActive }) =>
             isActive ? styles.linkActive : styles.link
           }
+          onClick={close}
         >
           About
         </NavLink>
@@ -45,6 +65,7 @@ export default function Navbar({ appName = "Sabelo Gumede" }: NavbarProps) {
           className={({ isActive }) =>
             isActive ? styles.linkActive : styles.link
           }
+          onClick={close}
         >
           Contact
         </NavLink>

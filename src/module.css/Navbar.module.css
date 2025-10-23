@@ -12,6 +12,7 @@
   padding: 8px 12px;
   margin: 0;
   height: 72px;
+  position: sticky;
 }
 
 .brand {
@@ -43,6 +44,29 @@
   gap: 10px;
   background: transparent;
   color: #e5e7eb;
+  flex-wrap: wrap;
+}
+
+/* Hamburger button (hidden on desktop) */
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+}
+
+.menuBar {
+  width: 20px;
+  height: 2px;
+  background: #e5e7eb;
+  display: block;
+  margin: 3px 0;
+  border-radius: 2px;
 }
 
 .link,
@@ -127,4 +151,38 @@
     height: 34px;
     font-size: 0.9rem;
   }
+}
+
+@media (max-width: 400px) {
+  .navbar { 
+    height: auto; 
+    padding: 10px 10px; 
+  }
+  .brand { 
+    font-size: 1.25rem; 
+  }
+  .actions { 
+    margin-right: 0; 
+  }
+}
+
+/* Collapse nav links into dropdown on small screens */
+@media (max-width: 768px) {
+  .menuButton { display: inline-flex; }
+  .links {
+    position: absolute;
+    top: 72px;
+    right: 12px;
+    left: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(13, 29, 69, 0.98);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(2,6,23,0.25);
+  }
+  .open { display: flex; }
+  .link, .linkActive { width: 100%; justify-content: center; }
 }
