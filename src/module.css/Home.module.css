@@ -7,6 +7,10 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(1200px 600px at -10% -10%, rgba(99, 102, 241, 0.15), transparent 60%),
+    radial-gradient(900px 500px at 110% 110%, rgba(14, 165, 233, 0.15), transparent 60%);
 }
 
 @media (max-width: 900px) {
@@ -22,24 +26,36 @@
   border-radius: 16px;
   padding: 28px;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
+  transform: translateY(12px);
+  opacity: 0;
+  animation: fadeUp 600ms ease-out 120ms forwards;
 }
 
 .title {
   margin: 0 0 8px 0;
   font-size: 40px;
   line-height: 1.1;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 600ms ease-out 220ms forwards;
 }
 
 .subtitle {
   margin: 0 0 20px 0;
   font-size: 18px;
   color: #eef2ff;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 600ms ease-out 320ms forwards;
 }
 
 .actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 600ms ease-out 420ms forwards;
 }
 
 .buttonPrimary {
@@ -85,6 +101,8 @@
   max-width: 520px;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(2, 6, 23, 0.2);
+  transform: translateY(0px);
+  animation: floatY 6s ease-in-out 0.6s infinite alternate;
 }
 
 .features {
@@ -158,6 +176,10 @@
   border-radius: 12px;
   padding: 16px;
   text-align: center;
+  transform: translateY(8px);
+  opacity: 0;
+  animation: fadeUp 700ms ease-out 200ms forwards;
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
 .statNumber {
@@ -169,4 +191,28 @@
 .statLabel {
   color: #475569;
   margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCard,
+  .title,
+  .subtitle,
+  .actions,
+  .illustration,
+  .statCard {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
 }
