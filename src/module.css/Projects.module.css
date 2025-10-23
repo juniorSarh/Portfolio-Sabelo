@@ -33,7 +33,6 @@
   transition: transform 150ms ease, box-shadow 150ms ease;
   opacity: 0;
   transform: translateY(10px);
-  animation: projFadeUp 700ms ease-out 140ms forwards;
 }
 
 .card:hover {
@@ -113,3 +112,6 @@
     opacity: 1 !important;
   }
 }
+
+/* Reveal state for scroll-triggered animation */
+.card:global(.is-revealed) { animation: projFadeUp 700ms ease-out 140ms forwards; }

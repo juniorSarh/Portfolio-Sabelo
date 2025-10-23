@@ -2,14 +2,16 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import styles from "../module.css/About.module.css"
+import { useScrollReveal } from "../hooks/useScrollReveal";
 export default function About() {
+  useScrollReveal();
   return (
     <div>
       <Navbar />
       <section className={styles.hero}>
-        <div className={styles.heroCard}>
-          <h1 className={styles.heroTitle}>SABELO GUMEDE</h1>
-          <p className={styles.heroSubtitle}>
+        <div className={styles.heroCard} data-reveal>
+          <h1 className={styles.heroTitle} data-reveal>SABELO GUMEDE</h1>
+          <p className={styles.heroSubtitle} data-reveal>
             Full Stack Developer & Junior Cloud Engineer & Support Technician
           </p>
         </div>
@@ -22,7 +24,7 @@ export default function About() {
                 </p> */}
 
         <section className={styles.sectionGrid}>
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Contact</h2>
             <div style={{ display: "grid", gap: 8 }}>
               <p style={{ margin: 0 }}>
@@ -59,7 +61,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Professional Summary</h2>
             <p style={{ margin: 0 }}>
               The Full-Stack developer/ cloud & software engineer with strong
@@ -71,7 +73,7 @@ export default function About() {
             </p>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Core Competencies</h2>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
               <li>
@@ -105,7 +107,7 @@ export default function About() {
             </ul>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Technical Skills</h2>
             <div style={{ display: "grid", gap: 10 }}>
               <div>
@@ -163,7 +165,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Certifications</h2>
             <div style={{ display: "grid", gap: 10 }}>
               <div>
@@ -188,7 +190,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Professional Experience</h2>
             <div style={{ display: "grid", gap: 16 }}>
               <div>
@@ -267,7 +269,7 @@ export default function About() {
             </div>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Projects & Extracurricular</h2>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
               <li>
@@ -336,7 +338,7 @@ export default function About() {
             </ul>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>Education</h2>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
               <li>
@@ -368,7 +370,7 @@ export default function About() {
             </ul>
           </article>
 
-          <article className={styles.card}>
+          <article className={styles.card} data-reveal>
             <h2 className={styles.cardTitle}>References</h2>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
               <li>

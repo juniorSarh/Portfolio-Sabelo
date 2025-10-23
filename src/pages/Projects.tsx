@@ -5,8 +5,10 @@ import JobTracker from "../assets/job-tracker.webp";
 import weatherApp from "../assets/weather-app.webp";
 import linkVault from "../assets/Link-vault.png";
 import shoppingList from "../assets/shoppinglist.png";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export default function Projects() {
+  useScrollReveal();
   const projects = [
     {
       title: "Link Vault",
@@ -46,12 +48,12 @@ export default function Projects() {
     <div>
       <Navbar/>
       <main className={styles.main}>
-        <h1 className={styles.heading}>Projects</h1>
-        <p className={styles.subheading}>A selection of my recent work. Click a project to view it.</p>
+        <h1 className={styles.heading} data-reveal>Projects</h1>
+        <p className={styles.subheading} data-reveal>A selection of my recent work. Click a project to view it.</p>
 
         <section className={styles.grid}>
           {projects.map((p) => (
-            <article key={p.title} className={styles.card}>
+            <article key={p.title} className={styles.card} data-reveal>
               <div className={styles.thumbWrap}>
                 <img src={p.imageSrc} alt={p.imageAlt} className={styles.thumb} />
               </div>

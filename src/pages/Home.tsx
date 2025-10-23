@@ -8,8 +8,10 @@ import projectStyles from '../module.css/Projects.module.css'
 import JobTracker from "../assets/job-tracker.webp";
 import linkVault from "../assets/Link-vault.png";
 import shoppingList from "../assets/shoppinglist.png";
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Home() {
+  useScrollReveal();
   const projects = [
     {
       title: "Link Vault",
@@ -40,9 +42,9 @@ export default function Home() {
     <div>
       <Navbar />
       <main className={styles.hero}>
-        <section className={styles.heroCard}>
-          <h1 className={styles.title}>Hi, I'm Sabelo Gumede</h1>
-          <p className={styles.subtitle}>
+        <section className={styles.heroCard} data-reveal>
+          <h1 className={styles.title} data-reveal>Hi, I'm Sabelo Gumede</h1>
+          <p className={styles.subtitle} data-reveal>
             Full-Stack Developer/ cloud & software engineer with strong end‑user
             support background and hands‑on React/TypeScript and Node.js
             projects.
@@ -55,7 +57,7 @@ export default function Home() {
           </p>
           <br />
           <br />
-          <div className={styles.actions}>
+          <div className={styles.actions} data-reveal>
             <Link to="/projects"
               className={styles.buttonPrimary}
               aria-label="View my projects"
@@ -76,6 +78,7 @@ export default function Home() {
             src={codingImg}
             alt="Developer at work"
             className={styles.illustration}
+            data-reveal
           />
         </section>
       </main>
@@ -90,7 +93,7 @@ export default function Home() {
         <h2 className={styles.sectionHeading}>Featured Projects</h2>
         <section className={projectStyles.grid}>
           {projects.map((p) => (
-            <article key={p.title} className={projectStyles.card}>
+            <article key={p.title} className={projectStyles.card} data-reveal>
               <div className={projectStyles.thumbWrap}>
                 <img src={p.imageSrc} alt={p.imageAlt} className={projectStyles.thumb} />
               </div>
@@ -117,15 +120,15 @@ export default function Home() {
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>Quick Stats</h2>
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
+          <div className={styles.statCard} data-reveal>
             <div className={styles.statNumber}>3+</div>
             <div className={styles.statLabel}>Years learning & building</div>
           </div>
-          <div className={styles.statCard}>
+          <div className={styles.statCard} data-reveal>
             <div className={styles.statNumber}>10+</div>
             <div className={styles.statLabel}>Projects & demos</div>
           </div>
-          <div className={styles.statCard}>
+          <div className={styles.statCard} data-reveal>
             <div className={styles.statNumber}>7+</div>
             <div className={styles.statLabel}>Core technologies</div>
           </div>
