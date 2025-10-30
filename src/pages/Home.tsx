@@ -16,7 +16,7 @@ export default function Home() {
     {
       title: "Link Vault",
       description:
-        "Link vault built with React + Vite, featuring responsive layout and clean routing.",
+        "A smart bookmark manager that saves links with titles/previews and makes them easy to search. Organize with tags/collections, import/export in bulk, and share curated sets.",
       link: "https://your-portfolio-live-link.example.com",
       imageSrc: linkVault,
       imageAlt: "Screenshot preview of the portfolio website",
@@ -24,7 +24,7 @@ export default function Home() {
     {
       title: "Job Application Tracker",
       description:
-        "Job application tracker built with React + Vite, featuring responsive layout and clean routing.",
+        "A personal CRM for your job hunt that tracks roles, stages, contacts, and outcomes. It adds reminders, notes, and simple analytics so you know what to do next and where you’re stuck.",
       link: "https://job-app-tracker-qzko.onrender.com",
       imageSrc: JobTracker,
       imageAlt: "job application tracker",
@@ -32,7 +32,7 @@ export default function Home() {
     {
       title: "Shopping List API",
       description:
-        "Shopping list app built with React + Vite, featuring responsive layout and clean routing.",
+        "A collaborative grocery planner with multiple lists, real-time sync, and categories for faster shopping. It can remember prices, track budgets, and turn recipes into checkable lists.",
       link: "https://shopping-list-app-pfno.onrender.com",
       imageSrc: shoppingList,
       imageAlt: "Dashboard analytics preview",
