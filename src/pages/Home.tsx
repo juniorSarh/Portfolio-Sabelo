@@ -41,46 +41,45 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <main className={styles.hero}>
-        <section className={styles.heroCard} data-reveal>
-          <h1 className={styles.title} data-reveal>Hi, I'm Sabelo Gumede</h1>
-          <p className={styles.subtitle} data-reveal>
-            Full-Stack Developer/ cloud & software engineer with strong end‑user
-            support background and hands‑on React/TypeScript and Node.js
-            projects.
-            <br />
-            <br />
-            Comfortable with Microsoft 365 environments, ticketing/SLAs, and
-            building small full‑stack apps (REST APIs + modern front‑ends). Keen
-            to grow within managed services, cloud operations, or a junior
-            full‑stack role.
-          </p>
-          <br />
-          <br />
-          <div className={styles.actions} data-reveal>
-            <Link to="/projects"
-              className={styles.buttonPrimary}
-              aria-label="View my projects"
-            >
-              View Projects
-            </Link>
-            <Link to="/contact"
-              className={styles.buttonGhost}
-              aria-label="Get in touch"
-            >
-              Get in touch
-            </Link>
+      <main className={styles.heroContainer}>
+        <div className={styles.heroCard} data-reveal>
+          <div className={styles.heroContent}>
+            <h1 className={styles.title} data-reveal>Hi, I'm Sabelo Gumede</h1>
+            <p className={styles.subtitle} data-reveal>
+              Full-Stack Developer/ cloud & software engineer with strong end‑user
+              support background and hands‑on React/TypeScript and Node.js
+              projects.
+              <br />
+              <br />
+              Comfortable with Microsoft 365 environments, ticketing/SLAs, and
+              building small full‑stack apps (REST APIs + modern front‑ends). Keen
+              to grow within managed services, cloud operations, or a junior
+              full‑stack role.
+            </p>
+            <div className={styles.actions} data-reveal>
+              <Link to="/projects"
+                className={styles.buttonPrimary}
+                aria-label="View my projects"
+              >
+                View Projects
+              </Link>
+              <Link to="/contact"
+                className={styles.buttonGhost}
+                aria-label="Get in touch"
+              >
+                Get in touch
+              </Link>
+            </div>
           </div>
-        </section>
-
-        <section className={styles.visual}>
-          <img
-            src={codingImg}
-            alt="Developer at work"
-            className={styles.illustration}
-            data-reveal
-          />
-        </section>
+          <div className={styles.heroImage}>
+            <img
+              src={codingImg}
+              alt="Developer at work"
+              className={styles.illustration}
+              data-reveal
+            />
+          </div>
+        </div>
       </main>
       {/* <div className={styles.features}>
         <span className={styles.chip}>Full-stack developer</span>
