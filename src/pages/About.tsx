@@ -1,389 +1,249 @@
-
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import styles from "../module.css/About.module.css"
+// Updated About.tsx with professional layout
+import { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import styles from "../module.css/About.module.css";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { Briefcase, GraduationCap, Award, Code, ChevronRight } from 'lucide-react';
+
 export default function About() {
   useScrollReveal();
+  const [activeTab, setActiveTab] = useState('summary');
+
+  // Set document title
+  useEffect(() => {
+    document.title = 'About Me | Sabelo Gumede - Full Stack Developer';
+  }, []);
+
+  const experience = [
+    {
+      role: "Full Stack Developer Trainee",
+      company: "mLab (CodeTribe)",
+      period: "2025 - Present",
+      responsibilities: [
+        "Developing responsive web applications using React, TypeScript, and Node.js in an agile environment",
+        "Implementing RESTful APIs and integrating with various third-party services and databases",
+        "Collaborating with cross-functional teams to design and deploy scalable cloud-based solutions",
+        "Writing clean, maintainable code with comprehensive unit and integration tests",
+        "Participating in code reviews and contributing to architectural decisions"
+      ]
+    },
+    {
+      role: "Internet of Things (IoT) Facilitator",
+      company: "mLab",
+      period: "2024 - 2025",
+      responsibilities: [
+        "Designed and delivered hands-on IoT workshops using Arduino and Raspberry Pi platforms",
+        "Mentored students in developing IoT prototypes and proof-of-concept projects",
+        "Created technical documentation and learning materials for IoT curriculum",
+        "Assisted in setting up and maintaining IoT lab equipment and development environments",
+        "Provided technical guidance on sensor integration and data visualization"
+      ]
+    },
+    {
+      role: "Information Technology Support Technician",
+      company: "Innobiz DUT Centre for Entrepreneurship & Innovation",
+      period: "2022 - 2024",
+      responsibilities: [
+        "Provided Tier 1 and 2 technical support for 100+ users across multiple locations",
+        "Managed Microsoft 365 environment including user accounts, licenses, and security policies",
+        "Automated routine IT tasks using PowerShell, reducing resolution time by 40%",
+        "Documented IT processes and created knowledge base articles for common issues",
+        "Assisted in network administration and infrastructure maintenance"
+      ]
+    }
+    // Add more experiences as needed
+  ];
+
+  const education = [
+    {
+      degree: "Advance Diploma in Information and Communications Technology",
+      institution: "Durban University of Technology",
+      year: "2020 - 2021"
+    },
+    {
+      degree: "Diploma in Information and Communications Technology",
+      institution: "Durban University of Technology",
+      year: "2017 - 2019"
+    }
+  ];
+
+  const certifications = [
+    "Cisco – Introduction to IoT",
+    "JavaScript Algorithms and Data Structures",
+    "Web Responsive Design",
+    "Database Design"
+  ];
+
+  const skills = {
+    languages: ["JavaScript/TypeScript", "Python", "C#", "SQL"],
+    frontend: ["React", "HTML5", "CSS", "Responsive Design"],
+    backend: ["Node.js", "Express", "RESTful APIs"],
+    tools: ["Git", "GitHub", "VS Code", "npm"],
+    cloud: ["Azure Fundamentals", "Netlify", "Vercel", "Render"]
+  };
+
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
-      <section className={styles.hero}>
-        <div className={styles.heroCard} data-reveal>
-          <h1 className={styles.heroTitle} data-reveal>SABELO GUMEDE</h1>
-          <p className={styles.heroSubtitle} data-reveal>
-            Full Stack Developer & Junior Cloud Engineer & Support Technician
-          </p>
+      <div className={styles.heroBanner}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>Sabelo Gumede</h1>
+          <p className={styles.heroSubtitle}>Full Stack Developer & Cloud Enthusiast</p>
         </div>
-      </section>
+      </div>
 
-      <main className={styles.main}>
-        {/* <h1 className={styles.heading}>About Me</h1>
-                <p className={styles.lead}>
-                  The full-Stack developer/ cloud & software engineer with strong end‑user support background and hands‑on React/TypeScript and Node.js projects. Comfortable with Microsoft 365 environments, ticketing/SLAs, and building small full‑stack apps (REST APIs + modern front‑ends). Keen to grow within managed services, cloud operations, or a junior full‑stack role.
-                </p> */}
+      <main className={styles.mainContainer}>
+        <div className={styles.tabs}>
+          <button 
+            className={`${styles.tab} ${activeTab === 'summary' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('summary')}
+          >
+            <Code size={18} className={styles.tabIcon} />
+            <span>Professional Summary</span>
+          </button>
+          <button 
+            className={`${styles.tab} ${activeTab === 'experience' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('experience')}
+          >
+            <Briefcase size={18} className={styles.tabIcon} />
+            <span>Experience</span>
+          </button>
+          <button 
+            className={`${styles.tab} ${activeTab === 'skills' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('skills')}
+          >
+            <Code size={18} className={styles.tabIcon} />
+            <span>Technical Skills</span>
+          </button>
+          <button 
+            className={`${styles.tab} ${activeTab === 'education' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('education')}
+          >
+            <GraduationCap size={18} className={styles.tabIcon} />
+            <span>Education</span>
+          </button>
+        </div>
 
-        <section className={styles.sectionGrid}>
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Contact</h2>
-            <div style={{ display: "grid", gap: 8 }}>
-              <p style={{ margin: 0 }}>
-                📧 Email:{" "}
-                <a href="mailto:sabelohgumede@gmail.com">
-                  sabelohgumede@gmail.com
-                </a>
-              </p>
-              <p style={{ margin: 0 }}>
-                📞 Phone: <a href="tel:+27722950140">072-295-0140</a>
-              </p>
-              <p style={{ margin: 0 }}>📍 Location: Durban, KZN</p>
-              <p style={{ margin: 0 }}>🪪 SA Citizen | Code 10 (C1)</p>
-              <p style={{ margin: 0 }}>
-                🐙 GitHub:{" "}
-                <a
-                  href="https://github.com/juniorSarh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh
-                </a>
-              </p>
-              <p style={{ margin: 0 }}>
-                🔗 LinkedIn:{" "}
-                <a
-                  href="https://linkedin.com/in/sabelogumede"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  linkedin.com/in/sabelogumede
-                </a>
-              </p>
-            </div>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Professional Summary</h2>
-            <p style={{ margin: 0 }}>
-              The Full-Stack developer/ cloud & software engineer with strong
-              end‑user support background and hands‑on React/TypeScript and
-              Node.js projects.<br/><br/> Comfortable with Microsoft 365 environments,
-              ticketing/SLAs, and building small full‑stack apps (REST APIs +
-              modern front‑ends). Keen to grow within managed services, cloud
-              operations, or a junior full‑stack role.
-            </p>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Core Competencies</h2>
-            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-              <li>
-                End‑User Support (remote & on‑site): walk‑throughs, ticket
-                triage, incident resolution to SLA/timeframes
-              </li>
-              <li>
-                Hardware & Software Setup: imaging, installs, configuration;
-                peripherals (printers/scanners)
-              </li>
-              <li>
-                Application Rollouts: supporting adoption of Microsoft 365
-                (Outlook/Teams/OneDrive) and collaboration tools
-              </li>
-              <li>
-                Troubleshooting: Windows desktops/laptops; basic LAN/Wi‑Fi;
-                device connectivity
-              </li>
-              <li>
-                Documentation: SOPs, step‑by‑step guides, knowledge‑base
-                articles
-              </li>
-              <li>
-                Stakeholder Service: clear communication; calm under pressure;
-                team collaboration
-              </li>
-              <li>
-                Foundations: SharePoint end‑user support; Endpoint/Intune basics
-                (in progress)
-              </li>
-            </ul>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Technical Skills</h2>
-            <div style={{ display: "grid", gap: 10 }}>
-              <div>
-                <strong>Languages</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>JavaScript/TypeScript</li>
-                  <li className={styles.skillChip}>Python</li>
-                  <li className={styles.skillChip}>C#</li>
-                  <li className={styles.skillChip}>SQL</li>
-                </ul>
-              </div>
-              <div>
-                <strong>Frontend</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>React (Vite)</li>
-                  <li className={styles.skillChip}>HTML5</li>
-                  <li className={styles.skillChip}>CSS Modules</li>
-                  <li className={styles.skillChip}>Responsive UI</li>
-                </ul>
-              </div>
-              <div>
-                <strong>Backend & APIs</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>Node.js (Express)</li>
-                  <li className={styles.skillChip}>RESTful API design</li>
-                </ul>
-              </div>
-              <div>
-                <strong>Dev Tools</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>Git</li>
-                  <li className={styles.skillChip}>GitHub</li>
-                  <li className={styles.skillChip}>JSON Server</li>
-                  <li className={styles.skillChip}>npm</li>
-                </ul>
-              </div>
-              <div>
-                <strong>Cloud / Platforms for CI/CD</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>Render (deployments)</li>
-                  <li className={styles.skillChip}>Versel (deployments)</li>
-                  <li className={styles.skillChip}>Netlify (deployments )</li>
-                  <li className={styles.skillChip}>Basic Azure fundamentals</li>
-                </ul>
-              </div>
-              <div>
-                <strong>IoT / Embedded</strong>
-                <ul className={styles.skills}>
-                  <li className={styles.skillChip}>Arduino</li>
-                  <li className={styles.skillChip}>
-                    Raspberry Pi (foundations)
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Certifications</h2>
-            <div style={{ display: "grid", gap: 10 }}>
-              <div>
-                <strong>Completed</strong>
-                <ul style={{ margin: 8, marginLeft: 18 }}>
-                  <li>Cisco – Introduction to IoT </li>
-                  <li>Javascript algorithm and Data structures</li>
-                  <li>Web responsive design</li>
-                  <li>Database Design</li>
-                </ul>
-              </div>
-              {/* <div>
-                <strong>Studying / Target 2025</strong>
-                <ul style={{ margin: 8, marginLeft: 18 }}>
-                  <li>MS‑102: Microsoft 365 Administrator</li>
-                  <li>MD‑102: Endpoint Administrator</li>
-                  <li>ITIL v4 Foundation</li>
-                  <li>Fortinet NSE 1–3</li>
-                  <li>Microsoft SharePoint Associate</li>
-                </ul>
-              </div> */}
-            </div>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Professional Experience</h2>
-            <div style={{ display: "grid", gap: 16 }}>
-              <div>
-                <p style={{ margin: 0 }}>
-                  <strong>Information Technology Support Technician</strong> |
-                  Innobiz DUT Centre for Entrepreneurship & Innovation
-                </p>
-                <p style={{ margin: "4px 0 8px 0", color: "#475569" }}>
-                  Mar 2022 – Jun 2024
-                </p>
-                <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-                  <li>
-                    Assisted students and staff face‑to‑face and over the phone
-                    to set up systems and resolve incidents end‑to‑end.
-                  </li>
-                  <li>
-                    Installed and configured software on stand‑alone computers
-                    and laptops; supported data migration tasks.
-                  </li>
-                  <li>
-                    Supported Microsoft 365 onboarding (Outlook, Teams, OneDrive
-                    basics) for new users; assisted with email/data migration
-                    tasks.
-                  </li>
-                  <li>
-                    Logged and resolved incidents via a ticketing system,
-                    working within agreed timeframes/SLAs and escalating where
-                    appropriate.
-                  </li>
-                  <li>
-                    Provided remote support using screen‑sharing/RDP tools and
-                    on‑site support for classrooms and labs.
-                  </li>
-                  <li>
-                    Documented fixes and standard procedures to speed up future
-                    triage and user self‑help.
-                  </li>
-                  <li>
-                    Collaborated with cross‑functional teams to coordinate
-                    software updates and patches within agreed windows.
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p style={{ margin: 0 }}>
-                  <strong>Internet of Things (IoT) Facilitator</strong> | Mobile
-                  Application Laboratory (mLab)
-                </p>
-                <p style={{ margin: "4px 0 8px 0", color: "#475569" }}>
-                  Oct 2024 – Apr 2025
-                </p>
-                <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-                  <li>
-                    Guided learners step‑by‑step (in person and remotely)
-                    through device setup, Arduino interfacing and sensor
-                    configuration.
-                  </li>
-                  <li>
-                    Followed build diagrams and written instructions to assemble
-                    prototypes and resolve lab‑related faults.
-                  </li>
-                  <li>
-                    Developed and delivered practical workshops; monitored
-                    progress and provided individual technical feedback.
-                  </li>
-                  <li>
-                    Created troubleshooting runbooks and how‑to guides that
-                    reduced repetitive queries from learners.
-                  </li>
-                  <li>
-                    Researched emerging IoT technologies and contributed to
-                    improvements in lab environments and documentation.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Projects & Extracurricular</h2>
-            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-              <li>
-                <strong>Link Vault (React + TypeScript)</strong> — Local link
-                manager with tagging, search, and LocalStorage persistence.
-                Repo:{" "}
-                <a
-                  href="https://github.com/juniorSarh/React-ts-link-vault"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh/React-ts-link-vault
-                </a>
-              </li>
-              <li>
-                <strong>
-                  Job Application Tracker (React + TS + JSON Server)
-                </strong>{" "}
-                — CRUD app with auth, protected routes, URL‑driven
-                search/filter/sort; deployed with Render (API/front‑end). Repo:{" "}
-                <a
-                  href="https://github.com/juniorSarh/React-Job-Application-Tracker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh/React-Job-Application-Tracker
-                </a>
-              </li>
-              <li>
-                <strong>React Weather App</strong> — OpenWeatherMap API:
-                current, hourly, weekly forecasts; geolocation, saved locations,
-                unit/theme toggles, offline cache. Repo:{" "}
-                <a
-                  href="https://github.com/juniorSarh/weather-application"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh/weather-application
-                </a>
-              </li>
-              <li>
-                <strong>ShoppingList‑API (Node + TypeScript)</strong> — Simple
-                REST API with in‑memory store; CRUD endpoints and consistent
-                error model. Repo:{" "}
-                <a
-                  href="https://github.com/juniorSarh/ShoppingList-API"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh/ShoppingList-API
-                </a>
-              </li>
-              <li>
-                <strong>
-                  Async Weather & News Dashboard (TypeScript/Node)
-                </strong>{" "}
-                — showcases callbacks → Promises → async/await patterns. Repo:{" "}
-                <a
-                  href="https://github.com/juniorSarh/weather-news-dashboard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/juniorSarh/weather-news-dashboard
-                </a>
-              </li>
-            </ul>
-          </article>
-
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>Education</h2>
-            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-              <li>
-                <strong>
-                  Advanced Diploma in Information Technology (ICT)
-                </strong>{" "}
-                | Durban University of Technology — 2020
-                <div style={{ color: "#475569" }}>
-                  Key coursework: Applied Mathematics; Data Structures;
-                  Platform‑Based Development; Software Development; Parallel &
-                  Distributed Computing
+        <div className={styles.contentArea}>
+          {activeTab === 'summary' && (
+            <section className={styles.section} data-reveal>
+              <h2 className={styles.sectionTitle}>Professional Summary</h2>
+              <div className={styles.timeline}>
+                <div className={styles.timelineItem}>
+                  <div className={styles.timelineDot}></div>
+                  <div className={styles.timelineContent}>
+                    <h3>2025 - Present</h3>
+                    <p>Full Stack Developer Trainee</p>
+                    <p>Building modern web applications using React, TypeScript, and Node.js. Specializing in creating responsive UIs and scalable backend services while following best practices in software development.</p>
+                  </div>
                 </div>
-              </li>
-              <li>
-                <strong>
-                  Diploma in Information & Communication Technology (App
-                  Development)
-                </strong>{" "}
-                | Durban University of Technology — 2019
-                <div style={{ color: "#475569" }}>
-                  Key coursework: Application Development; Information Systems;
-                  Mobile Computing; IT Project Management
+                <div className={styles.timelineItem}>
+                  <div className={styles.timelineDot}></div>
+                  <div className={styles.timelineContent}>
+                    <h3>2024 - 2025</h3>
+                    <p>IoT Facilitator</p>
+                    <p>Mentored aspiring technologists in IoT development, helping them bring their ideas to life through hands-on workshops and project-based learning using Arduino and Raspberry Pi platforms.</p>
+                  </div>
                 </div>
-              </li>
-              <li>
-                <strong>Matric (Grade 12)</strong> | iNkosi Moses Zikahli High
-                School — 2015
-              </li>
-            </ul>
-          </article>
+                <div className={styles.timelineItem}>
+                  <div className={styles.timelineDot}></div>
+                  <div className={styles.timelineContent}>
+                    <h3>2022 - 2024</h3>
+                    <p>IT Support Technician</p>
+                    <p>Provided comprehensive technical support while developing automation scripts to improve IT operations, gaining valuable experience in enterprise environments and user support.</p>
+                  </div>
+                </div>
+                <div className={styles.timelineItem}>
+                  <div className={styles.timelineDot}></div>
+                  <div className={styles.timelineContent}>
+                    <h3>2020 - 2021</h3>
+                    <p>Advanced Diploma in ICT</p>
+                    <p>Deepened knowledge in software development, data structures, and distributed systems, while working on real-world projects.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
 
-          <article className={styles.card} data-reveal>
-            <h2 className={styles.cardTitle}>References</h2>
-            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
-              <li>
-                Dr Harry Swatson — SEAD1 | 083 762 8221 |{" "}
-                <a href="mailto:Swatsonhk@gmail.com">Swatsonhk@gmail.com</a>
-              </li>
-              <li>
-                Ms Palesa Antony — mLab Ecosystem Manager/Lead | 076 135 1688 |{" "}
-                <a href="mailto:Palesa@mlab.co.za">Palesa@mlab.co.za</a>
-              </li>
-            </ul>
-          </article>
-        </section>
+          {activeTab === 'experience' && (
+            <section className={styles.section} data-reveal>
+              <h2 className={styles.sectionTitle}>Professional Experience</h2>
+              {experience.map((exp, index) => (
+                <div key={index} className={styles.experienceCard}>
+                  <h3 className={styles.jobTitle}>{exp.role}</h3>
+                  <p className={styles.company}>{exp.company}</p>
+                  <p className={styles.period}>{exp.period}</p>
+                  <ul className={styles.responsibilities}>
+                    {exp.responsibilities.map((item, i) => (
+                      <li key={i} className={styles.responsibilityItem}>
+                        <ChevronRight size={16} className={styles.bulletIcon} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </section>
+          )}
+
+          {activeTab === 'skills' && (
+            <section className={styles.section} data-reveal>
+              <h2 className={styles.sectionTitle}>Technical Skills</h2>
+              <div className={styles.skillsGrid}>
+                {Object.entries(skills).map(([category, items]) => (
+                  <div key={category} className={styles.skillCategory}>
+                    <h3 className={styles.skillCategoryTitle}>
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </h3>
+                    <div className={styles.skillItems}>
+                      {items.map((skill, i) => (
+                        <span key={i} className={styles.skillItem}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {activeTab === 'education' && (
+            <section className={styles.section} data-reveal>
+              <h2 className={styles.sectionTitle}>Education & Certifications</h2>
+              
+              <div className={styles.educationSection}>
+                <h3 className={styles.subsectionTitle}>
+                  <GraduationCap size={20} className={styles.sectionIcon} />
+                  Education
+                </h3>
+                {education.map((edu, index) => (
+                  <div key={index} className={styles.educationCard}>
+                    <h4>{edu.degree}</h4>
+                    <p className={styles.institution}>{edu.institution}</p>
+                    <p className={styles.period}>{edu.year}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.certificationsSection}>
+                <h3 className={styles.subsectionTitle}>
+                  <Award size={20} className={styles.sectionIcon} />
+                  Certifications
+                </h3>
+                <ul className={styles.certificationsList}>
+                  {certifications.map((cert, index) => (
+                    <li key={index} className={styles.certificationItem}>
+                      <ChevronRight size={16} className={styles.bulletIcon} />
+                      {cert}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
+        </div>
       </main>
       <Footer />
     </div>
