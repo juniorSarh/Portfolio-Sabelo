@@ -1,8 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   const { pathname } = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
     { label: "Home", to: "/" },
@@ -12,45 +16,51 @@ export default function Navbar() {
     { label: "Contact", to: "/contact" },
   ];
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => document.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <nav
-      className="navbar py-3 px-4"
-      style={{
-        background: "linear-gradient(to right, #050507, #0a0d13)",
-      }}
-    >
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        
-        {/* Left Logo + Name */}
-        <div className="d-flex align-items-center gap-2">
-          <span style={{ color: "#3b82f6", fontSize: "1.4rem" }}>{"</>"}</span>
-          <span className="fw-semibold text-white fs-5">Sabelo Gumede</span>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        {/* Logo and Brand */}
+        <Link to="/" className="navbar-logo">
+          <span className="logo-icon">{"</>"}</span>
+          <span className="logo-text">Sabelo Gumede</span>
+        </Link>
+
+        {/* Mobile menu button */}
+        <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </div>
 
-        {/* Right Navigation Links */}
-        <div className="d-flex gap-4">
-          {navItems.map((item) => {
-            const active = pathname === item.to;
-
-            return (
+        {/* Navigation Links */}
+        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+          {navItems.map((item) => (
+            <li key={item.to} className="nav-item">
               <Link
-                key={item.to}
                 to={item.to}
-                className="nav-link"
-                style={{
-                  color: active ? "#3b82f6" : "#ffffff",
-                  fontWeight: active ? "600" : "400",
-                  padding: "6px 16px",
-                  borderRadius: active ? "8px" : "0px",
-                  backgroundColor: active ? "#ffffff" : "transparent",
-                  transition: "0.2s",
-                }}
+                className={`nav-link ${pathname === item.to ? 'active' : ''}`}
               >
                 {item.label}
               </Link>
-            );
-          })}
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
