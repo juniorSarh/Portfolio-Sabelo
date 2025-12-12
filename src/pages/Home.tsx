@@ -45,9 +45,22 @@ export default function Home() {
         <div className={styles.heroCard} data-reveal>
           <div className={styles.heroContent}>
             <h1 className={styles.title} data-reveal>Hi, I'm Sabelo Gumede</h1>
-            <p className={styles.subtitle} data-reveal>
-              Full-Stack Developer/ cloud & software engineer with strong end‑user
-              support background and hands‑on React/TypeScript and Node.js
+            <p 
+              className={styles.subtitle} 
+              data-reveal
+              style={{
+                display: 'block',
+                color: '#333',
+                opacity: 1,
+                visibility: 'visible',
+                fontSize: '18px',
+                margin: '20px 0',
+                lineHeight: 1.6,
+                fontWeight: 400
+              }}
+            >
+              Full-Stack Developer / Cloud & Software Engineer with strong end‑user
+              support background and hands‑on experience with React, TypeScript, and Node.js
               projects.
               <br />
               <br />

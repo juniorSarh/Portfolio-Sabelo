@@ -101,12 +101,21 @@
 }
 
 .subtitle {
-  margin: 0 0 20px 0;
+  margin: 20px 0;
   font-size: 18px;
-  color: #555;
-  opacity: 0;
-  transform: translateY(8px);
+  color: #333;
+  opacity: 1 !important;
+  transform: none !important;
   line-height: 1.6;
+  visibility: visible !important;
+  font-weight: 400;
+}
+
+/* Ensure no animations override the visibility */
+[data-reveal].subtitle,
+[data-reveal].subtitle.is-revealed {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .title {
