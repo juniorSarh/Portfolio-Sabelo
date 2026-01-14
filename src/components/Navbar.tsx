@@ -13,6 +13,7 @@ export default function Navbar() {
     { label: "About", to: "/about" },
     { label: "Tech Stack", to: "/techstack" },
     { label: "Projects", to: "/projects" },
+    { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
   ];
 

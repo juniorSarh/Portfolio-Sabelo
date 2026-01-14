@@ -1,6 +1,7 @@
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Testimonials from '../components/Testimonials'
 import styles from '../module.css/Home.module.css'
 import codingImg from '../assets/sabelo.png'
 import { Link } from 'react-router-dom';
@@ -9,9 +10,16 @@ import JobTracker from "../assets/job-tracker.webp";
 import linkVault from "../assets/Link-vault.png";
 import shoppingList from "../assets/shoppinglist.png";
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 export default function Home() {
   useScrollReveal();
+  const { trackProjectView } = useAnalytics();
+
+  const handleProjectClick = (projectName: string, projectLink: string) => {
+    trackProjectView(projectName, projectLink);
+  };
+
   const projects = [
     {
       title: "Link Vault",
@@ -120,6 +128,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label={`Open ${p.title}`}
                   className={projectStyles.button}
+                  onClick={() => handleProjectClick(p.title, p.link)}
                 >
                   View Project
                 </a>
@@ -146,6 +155,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Testimonials />
       <Footer />
     </div>
   );

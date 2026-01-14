@@ -6,9 +6,16 @@ import weatherApp from "../assets/weather-app.webp";
 import linkVault from "../assets/Link-vault.png";
 import shoppingList from "../assets/shoppinglist.png";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useAnalytics } from "../hooks/useAnalytics";
 
 export default function Projects() {
   useScrollReveal();
+  const { trackProjectView } = useAnalytics();
+
+  const handleProjectClick = (projectName: string, projectLink: string) => {
+    trackProjectView(projectName, projectLink);
+  };
+
   const projects = [
     {
       title: "Link Vault",
@@ -68,6 +75,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   aria-label={`Open ${p.title}`}
                   className={styles.button}
+                  onClick={() => handleProjectClick(p.title, p.link)}
                 >
                   View Project
                 </a>
