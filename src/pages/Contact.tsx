@@ -3,23 +3,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../module.css/Contact.module.css";
 import { Mail, MapPin, Download, Github, Linkedin, Twitter } from 'lucide-react';
-import { supabase } from '../lib/supabase';
-import { useAnalytics } from '../hooks/useAnalytics';
 
 export default function Contact() {
-  const { trackResumeDownload } = useAnalytics();
-
   useEffect(() => {
     document.title = 'Contact Me | Sabelo Gumede - Full Stack Developer';
+    // Optional: Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Get in touch with Sabelo Gumede for collaboration, job opportunities, or just to say hello!');
     }
   }, []);
-
-  const handleResumeDownload = () => {
-    trackResumeDownload();
-  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -40,34 +33,24 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
+    // Simulate form submission
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            status: 'unread'
-          }
-        ]);
-
-      if (error) throw error;
-
+      // Replace with actual form submission logic
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus({
         success: true,
         message: 'Thank you for your message! I will get back to you soon.'
       });
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Error submitting form:', error);
       setSubmitStatus({
         success: false,
         message: 'Something went wrong. Please try again later.'
       });
     } finally {
       setIsSubmitting(false);
+      // Clear status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     }
   };
@@ -172,11 +155,10 @@ export default function Contact() {
         <section className={styles.quickLinks}>
           <h2 className={styles.sectionTitle}>Quick Actions</h2>
           <div className={styles.actionButtons}>
-            <a
-              href="/src/assets/Sabelo-Gumede-Full-Stack-Developer.pdf"
-              download
+            <a 
+              href="/src/assets/Sabelo-Gumede-Full-Stack-Developer.pdf" 
+              download 
               className={styles.actionButton}
-              onClick={handleResumeDownload}
             >
               <Download className={styles.buttonIcon} />
               <span>Download CV</span>
